@@ -1,0 +1,23 @@
+{
+  "name": "maweb",
+  "version": "1.0.0",
+  "description": "Landing page for Maweb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zohla/Maweb.git"
+  },
+  "author": "Maren Lilleberre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zohla/Maweb/issues"
+  },
+  "homepage": "https://github.com/Zohla/Maweb#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
