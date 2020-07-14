@@ -1,0 +1,179 @@
+/* Colors:
+peach - #ffcdb2 / 255, 205, 178
+salmon - #ffb4a2 / 255, 180, 162
+blush - #e5989b / 229, 152, 155
+lavender - #b5838d / 181, 131, 141
+grey - #6d6875  / 109, 104, 117
+
+
+/* SCSS HEX*/
+/* $ming:  */
+/* .nothingbutcolors {
+    ming: #006d77ff;
+    middle-bluegreen:  #83c5beff;
+    aliceblue: #edf6f9ff;
+    unbleached-silk: #ffddd2ff;
+    dark salmon: #e29578ff;
+ */
+/* SCSS HSL
+$ming: hsla(185, 100%, 47%, 1);
+$middle-blue-green: hsla(174, 34%, 77%, 1);
+$alice-blue: hsla(195, 5%, 98%, 1);
+$unbleached-silk: hsla(15, 18%, 100%, 1);
+$dark-salmon: hsla(16, 47%, 89%, 1);
+
+SCSS RGB 
+$ming: rgba(0, 109, 119, 1);
+$middle-blue-green: rgba(131, 197, 190, 1);
+$alice-blue: rgba(237, 246, 249, 1);
+$unbleached-silk: rgba(255, 221, 210, 1);
+$dark-salmon: rgba(226, 149, 120, 1);
+
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #3e3e3e;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  /* Border and padding is not longer added to total width: */ }
+
+.header {
+  height: 95vh;
+  /* covers 95% of the view height */
+  background-image: linear-gradient(to left top, rgba(0, 109, 119, 0.8), rgba(131, 197, 190, 0.8)), url(../img/headercomp.jpg);
+  background-size: cover;
+  background-position: top;
+  /* will always show the top of the picture */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%, 0% 100%); }
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem; }
+
+.header__logo {
+  height: 3.5rem; }
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* In relation to the element itself */
+  text-align: center; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* a hack if the animation is shaky */
+  margin-bottom: 6rem; }
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 1s; */ }
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2.2rem;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 1s; */ }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    opacity: 1;
+    transform: translateX(0.7rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    opacity: 1;
+    transform: translateX(-0.7rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); }
+
+.btn--white {
+  background-color: #fff;
+  color: #3e3e3e; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn--white::after {
+  background-color: #fff; }
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
+
+.btn--animated {
+  animation: moveInButton .5s ease-out .75s;
+  animation-fill-mode: backwards; }
